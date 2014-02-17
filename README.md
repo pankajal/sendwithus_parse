@@ -1,11 +1,14 @@
-sendwithus node-client
+Sendwithus Parse Module
 ========================
+
+## About
+
+This is a Parse.com Cloud Code Module for the sendwithus API based on the official [NodeJS Client](https://github.com/sendwithus/sendwithus_nodejs)
 
 ## Installation
 
-```
-npm install sendwithus
-```
+Copy 'sendwithus.js' to your Parse Cloud Code `cloud' directory
+
 
 # Usage
 
@@ -14,7 +17,7 @@ All callbacks accept `err` and `data`:
 ```javascript
 var callback = function(err, data) {
     if (err) {
-        console.log(err, err.statusCode);
+        console.log(err.message, err.status);
     } else {
         console.log(data);
     }
@@ -24,7 +27,7 @@ var callback = function(err, data) {
 ## List Your Emails
 
 ```javascript
-var api = require('sendwithus')(API_KEY);
+var api = require('cloud/sendwithus.js')(API_KEY);
 api.emails(callback);
 ```
 
@@ -35,7 +38,7 @@ api.emails(callback);
 The `email_data` field is optional, but highly recommended!
 
 ```javascript
-var api = require('sendwithus')(API_KEY);
+ar api = require('cloud/sendwithus.js')(API_KEY);
 api.send({
     email_id: EMAIL_ID,
     recipient: { address: 'us@sendwithus.com'}
@@ -44,7 +47,7 @@ api.send({
 
 ### Call with REQUIRED parameters and email_data
 ```javascript
-var api = require('sendwithus')(API_KEY);
+ar api = require('cloud/sendwithus.js')(API_KEY);
 api.send({
     email_id: EMAIL_ID,
     recipient: {
@@ -59,7 +62,7 @@ api.send({
 `sender['address']` is a required sender field
 
 ```javascript
-var api = require('sendwithus')(API_KEY);
+var api = require('cloud/sendwithus.js')(API_KEY);
 api.send({
     email_id: EMAIL_ID,
     recipient: { address: 'us@sendwithus.com'},
@@ -75,7 +78,7 @@ api.send({
 `sender['name']` and `sender['reply_to']` are both optional
 
 ```javascript
-var api = require('sendwithus')(API_KEY);
+var api = require('cloud/sendwithus.js')(API_KEY);
 api.send({
     email_id: EMAIL_ID,
     recipient: { address: 'us@sendwithus.com'},
@@ -95,19 +98,15 @@ api.send({
 #### malformed request
 	
 ```javascript
-	> err.statusCode;
+	> err.status;
 	400
 ```
 
 #### bad api key
 
 ```javascript
-	> err.statusCode;    
+	> err.status;    
 	403
 ```
 
-## Run Tests
 
-```
-npm test
-```
