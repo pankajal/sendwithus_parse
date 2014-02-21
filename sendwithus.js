@@ -22,7 +22,7 @@ Sendwithus.prototype._buildHeaders = function() {
   var headers = { };
   headers[API_HEADER_KEY] = this.API_KEY;
   headers[API_HEADER_CLIENT] = API_CLIENT;
-  headers['Content-Type'] = 'application/json';
+  headers['Content-Type'] = 'application/json; charset=utf-8';
 
   this._debug('Set headers: ' + JSON.stringify(headers));
 
