@@ -3,7 +3,7 @@ Sendwithus Parse Module
 
 ## About
 
-This is a Parse.com Cloud Code Module for the Sendwithus API based on the official [NodeJS Client](https://github.com/sendwithus/sendwithus_nodejs)
+This is a Parse.com Cloud Code Module for the Sendwithus API based on the official Sendwithus [NodeJS Client](https://github.com/sendwithus/sendwithus_nodejs), check there for the most up to date usage documentation.
 
 ## Installation
 
